@@ -1,0 +1,79 @@
+.appeal {
+  &-history {
+    &-step {
+      position: relative;
+      padding-left: 32px;
+
+      &:not(:last-child) {
+        margin-bottom: 48px;
+
+        .vector {
+          position: absolute;
+          height: calc(100% + 28px);
+          top: 24px;
+          left: 10px;
+          border-left: 1px dashed #aaa;
+        }
+      }
+
+      .point {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px dashed #aaa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        top: 4px;
+
+        .inner {
+          border-radius: 50%;
+          width: 12px;
+          height: 12px;
+          background: #aaa;
+        }
+      }
+
+      .role {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        span {
+          font-size: 18px;
+          line-height: 24px;
+          color: rgb(33, 33, 33);
+        }
+      }
+
+      .date {
+        display: block;
+        font-size: 18px;
+        line-height: 24px;
+        color: rgb(33, 33, 33);
+      }
+
+      .info {
+        display: block;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        color: rgb(33, 33, 33);
+      }
+
+      .description {
+        display: block;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        color: rgb(33, 33, 33);
+      }
+
+      .deadline {
+        margin-top: 8px;
+      }
+    }
+  }
+}

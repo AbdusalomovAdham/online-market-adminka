@@ -1,0 +1,89 @@
+input {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: GT Walsheim Pro;
+  padding: 0;
+  margin: 0;
+  scrollbar-color: #dadada #fff;
+  scrollbar-width: 2px;
+}
+
+li {
+  list-style: none;
+}
+
+/* Default scrollbar hidden */
+* {
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show scrollbar with fade-in effect on hover */
+*:hover::-webkit-scrollbar {
+  opacity: 1;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+*:hover::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+  }
+}
+
+@for $i from 1 through 24 {
+  .line-#{$i} {
+    display: -webkit-box;
+    line-clamp: $i; /* Change this to the number of lines you want */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@import "components", "layouts", "mixins", "pages";

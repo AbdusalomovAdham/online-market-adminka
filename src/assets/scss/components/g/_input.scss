@@ -1,0 +1,136 @@
+.input {
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.9px;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  &-wrapper {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(180, 187, 200, 1);
+    display: flex;
+    height: 48px;
+    align-items: center;
+    position: relative;
+
+    .top {
+      position: absolute;
+      top: -6px;
+      background: #fff;
+      left: 12px;
+      font-size: 12px;
+      color: rgba(104, 104, 104, 1);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input {
+      width: 100%;
+      background: transparent;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.1px;
+      text-align: left;
+      padding: 12px 0;
+
+      &::placeholder {
+        color: rgba(104, 104, 104, 1);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        text-align: left;
+      }
+    }
+
+    button {
+      min-width: 32px;
+      height: 32px;
+      margin-left: 8px;
+      background: linear-gradient(180deg, #4BA0F3 0%, #197CDC 100%);
+      border-radius: 4px;
+      border: none;
+    }
+
+    .before-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .after-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+
+  &.big {
+    label {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+     &>div {
+       padding: 20px;
+       height: 64px;
+       border: 1px solid rgba(180, 187, 200, 1);
+
+       input {
+         font-size: 20px;
+         font-weight: 400;
+         line-height: 22.9px;
+
+         &::placeholder {
+           font-size: 20px;
+           font-weight: 400;
+           line-height: 22.9px;
+           text-align: left;
+           color: rgba(143, 150, 163, 1);
+         }
+       }
+     }
+  }
+
+  &.transparent {
+    &>div{
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      border: none;
+      gap: 8px;
+
+      input {
+        color: #fff;
+      }
+
+      .top {
+        display: none;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18.32px;
+        text-align: left;
+
+      }
+
+      input::placeholder {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18.32px;
+        text-align: left;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+

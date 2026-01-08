@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Rich Text Editor</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2rem;
+        }
+
+        #toolbar {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #toolbar button {
+            margin-right: 5px;
+            padding: 5px 10px;
+        }
+
+        #editor {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 200px;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="toolbar">
+        <button onclick="exec('bold')"><b>B</b></button>
+        <button onclick="exec('italic')"><i>I</i></button>
+        <button onclick="exec('underline')"><u>U</u></button>
+        <button onclick="insertOptions()">A) B) C) D)</button>
+    </div>
+    <div id="editor" contenteditable="true"></div>
+
+    <script>
+        const editor = document.getElementById('editor')
+
+        editor.addEventListener('keydown', (event) => {
+            // Example: log every key
+            console.log('Key pressed:', event.key)
+
+            // Example: Ctrl + B for bold
+            if (event.ctrlKey && event.key === 'b') {
+                event.preventDefault()
+                document.execCommand('bold')
+            }
+
+            // Example: custom Enter behavior
+            if (event.key === 'Enter') {
+                console.log('Enter pressed – inserting line break')
+            }
+
+            // Example: Insert option on Tab
+            if (event.key === 'Tab') {
+                event.preventDefault()
+                document.execCommand('insertHTML', false, '&emsp;&emsp;&emsp;&emsp;') // insert tab spacing
+            }
+        })
+    </script>
+
+</body>
+
+</html>

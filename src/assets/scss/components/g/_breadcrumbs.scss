@@ -1,0 +1,17 @@
+.g-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .breadcrumb {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        span {
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+}

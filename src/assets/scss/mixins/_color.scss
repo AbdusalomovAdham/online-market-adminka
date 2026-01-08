@@ -1,0 +1,20 @@
+.white {
+  color: white;
+}
+
+.red {
+  color: red;
+}
+
+.bg {
+  &-white {
+    background: #fff;
+  }
+
+  &-danger {
+    td {
+      background: #ffc8c8 !important;
+    }
+    background: #ffc8c8 !important;
+  }
+}

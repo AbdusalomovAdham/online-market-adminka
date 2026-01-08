@@ -1,0 +1,53 @@
+.user-header {
+    padding: 24px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 24px;
+
+    .user-data {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-right: 24px;
+        border-right: 1px solid #eee;
+
+        .avatar {
+            background-color: #6d278e;
+            width: 48px;
+            height: 48px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                font-size: 24px;
+                color: #fff;
+            }
+        }
+
+        .username {
+            font-size: 18px;
+        }
+    }
+}
+
+.logout-btn {
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 24px;
+    border: 1px solid #eee;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+
+    span {
+        font-size: 20px;
+        color: red;
+    }
+
+    svg {
+        fill: red;
+    }
+}

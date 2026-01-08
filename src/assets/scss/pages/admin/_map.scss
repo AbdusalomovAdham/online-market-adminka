@@ -1,0 +1,63 @@
+.map-page {
+  .region {
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: #8db7ff;
+    }
+
+    &.active {
+      color: #8db7ff;
+    }
+  }
+
+  .count {
+    padding: 0 12px;
+
+    &-wrapper {
+      border-radius: 8px;
+      padding: 12px;
+      background: #fff;
+      display: flex;
+      flex-wrap: wrap;
+
+      &.new {
+        background: #ededed;
+      }
+
+      &.review {
+        background: #b8e2ff;
+      }
+
+      &.resolved {
+        background: #dbffd9;
+      }
+
+      &.rejected {
+        background: #ffd8d8;
+      }
+
+      .value {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 12px;
+
+        span {
+          font-size: 28px;
+          font-weight: 500;
+        }
+      }
+
+      &>span {
+        width: 100%;
+        font-size: 18px;
+      }
+    }
+  }
+}

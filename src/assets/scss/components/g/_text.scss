@@ -1,0 +1,129 @@
+.t {
+  &-center {
+    text-align: center !important;
+  }
+
+  &-left {
+    text-align: left !important;
+  }
+
+  &-right {
+    text-align: right !important;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.lowercase {
+  text-transform: lowercase !important;
+}
+
+.text {
+  @for $i from 1 through 96 {
+    &-#{$i} {
+      font-size: #{$i}px !important;
+      line-height: #{$i * 1.25}px !important;
+
+      p {
+        font-size: #{$i}px !important;
+        line-height: #{$i * 1.25}px !important;
+      }
+    }
+  }
+}
+
+.g-text {
+  span {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.9px;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 16px;
+    color: rgb(104, 104, 104);
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    text-align: left;
+  }
+}
+
+.text {
+  &-success {
+    color: green !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+  }
+  &-info {
+    color: #196f83 !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+  }
+  &-warn {
+    color: #8e9828 !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+  }
+  &-purple {
+    color: #2948af !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+  }
+  &-danger {
+    color: orangered !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+  }
+  &-white {
+    color: white !important;
+  }
+
+  &-center {
+    text-align: center;
+  }
+}
+
+td {
+  &.text {
+    &-success {
+      color: green !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+    }
+    &-info {
+      color: #196f83 !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+    }
+    &-warn {
+      color: #8e9828 !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+    }
+    &-purple {
+      color: #2948af !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+    }
+    &-danger {
+      color: orangered !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+    }
+  }
+}
+
+@for $i from 0 through 10 {
+  .line-#{$i} {
+    display: -webkit-box;
+    -webkit-line-clamp: #{$i}; /* Number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,49 @@
+.g-checkbox {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  .checkbox {
+    cursor: pointer;
+    input {
+      display: none;
+    }
+    .slider {
+      display: flex;
+      height: 16px;
+      width: 16px;
+      border-radius: 8px;
+      border: 1px solid #989898;
+      align-items: center;
+      justify-content: center;
+
+      .circle {
+        border-radius: 6px;
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &.active {
+        .circle {
+          background-color: green;
+        }
+      }
+    }
+  }
+
+
+  // label {
+  //   display: block;
+  //   font-size: 16px;
+  //   font-weight: 500;
+  //   line-height: 22.9px;
+  //   text-align: left;
+  //   margin-bottom: 8px;
+  // }
+
+  // input {
+  //   cursor: pointer;
+  // }
+}

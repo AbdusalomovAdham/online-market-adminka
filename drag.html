@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Drag and Drop Match</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .question,
+        .answer,
+        .dropzone {
+            border: 2px dashed #aaa;
+            padding: 20px;
+            width: 200px;
+            min-height: 60px;
+            text-align: center;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .answer {
+            border: 2px solid #4CAF50;
+            background-color: #e6ffe6;
+        }
+
+        .dropzone {
+            background-color: #fff8dc;
+        }
+
+        .highlight {
+            border-color: #2196F3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Match the Answers to the Questions</h2>
+
+    <div class="container" id="answers">
+        <div class="answer" draggable="true" id="a1" data-answer="1">Answer 1</div>
+        <div class="answer" draggable="true" id="a2" data-answer="2">Answer 2</div>
+        <div class="answer" draggable="true" id="a3" data-answer="3">Answer 3</div>
+    </div>
+
+    <div class="container" id="questions">
+        <div class="dropzone" data-correct-answer="2" id="q1">Question 1</div>
+        <div class="dropzone" data-correct-answer="1" id="q2">Question 2</div>
+        <div class="dropzone" data-correct-answer="3" id="q3">Question 3</div>
+    </div>
+
+    <button onclick="checkAnswers()">Check</button>
+    <div id="result"></div>
+
+    <script>
+        const answers = document.querySelectorAll('.answer');
+        const dropzones = document.querySelectorAll('.dropzone');
+        const originalContainer = document.getElementById('answers');
+
+        let dragged = null;
+
+        answers.forEach(answer => {
+            answer.addEventListener('dragstart', e => {
+                dragged = answer;
+            });
+        });
+
+        dropzones.forEach(zone => {
+            zone.addEventListener('dragover', e => {
+                e.preventDefault();
+                zone.classList.add('highlight');
+                console.log('dragover', e)
+            });
+            zone.addEventListener('dragleave', e => {
+                zone.classList.remove('highlight');
+                console.log('dragleave', e)
+            });
+            zone.addEventListener('drop', e => {
+                console.log('drop', e)
+                e.preventDefault();
+                zone.classList.remove('highlight');
+                // Remove old child if exists
+                if (zone.firstChild) {
+                    originalContainer.appendChild(zone.firstChild);
+                }
+                zone.appendChild(dragged);
+            });
+        });
+
+        originalContainer.addEventListener('dragover', e => e.preventDefault());
+        originalContainer.addEventListener('drop', e => {
+            e.preventDefault();
+            originalContainer.appendChild(dragged);
+        });
+
+        function checkAnswers() {
+            let correct = 0;
+            dropzones.forEach(zone => {
+                const answer = zone.firstChild;
+                if (answer && answer.dataset.answer === zone.dataset.correctAnswer) {
+                    correct++;
+                    zone.style.backgroundColor = '#c8e6c9'; // green
+                } else {
+                    zone.style.backgroundColor = '#ffcdd2'; // red
+                }
+            });
+            document.getElementById('result').innerText = `You got ${correct} / ${dropzones.length} correct`;
+        }
+    </script>
+
+</body>
+
+</html>

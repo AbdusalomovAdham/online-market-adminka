@@ -1,0 +1,37 @@
+@for $i from 1 through 2400 {
+  .w-#{$i} {
+    width: #{$i}px !important;
+  }
+}
+
+@for $i from 1 through 2400 {
+  .min-w-#{$i} {
+    min-width: #{$i}px !important;
+  }
+}
+
+@for $i from 1 through 2400 {
+  .h-#{$i} {
+    height: #{$i}px;
+  }
+}
+
+.w {
+  &-100vw {
+    width: 100vw;
+  }
+
+  &-100p {
+    width: 100%;
+  }
+}
+
+.h {
+  &-100vh {
+    width: 100vh;
+  }
+
+  &-100p {
+    height: 100%;
+  }
+}

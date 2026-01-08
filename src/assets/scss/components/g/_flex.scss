@@ -1,0 +1,100 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &.items-center {
+    align-items: center;
+  }
+
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.content-end {
+    justify-content: flex-end;
+  }
+
+  &.content-start {
+    justify-content: flex-start;
+  }
+
+  &.space-between {
+    justify-content: space-between;
+  }
+
+  @for $i from 0 through 48 {
+    &.gap-#{$i} {
+      gap: #{$i}px;
+    }
+  }
+
+  // Generate margin classes for values 1 to 10
+  @for $i from 1 through 24 {
+    .col-#{$i} {
+      width: #{100% * $i/24};
+    }
+  }
+}
+
+
+.rows {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &.items-center {
+    align-items: center;
+  }
+
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.content-end {
+    justify-content: flex-end;
+  }
+
+  &.content-start {
+    justify-content: flex-start;
+  }
+
+  &.space-between {
+    justify-content: space-between;
+  }
+
+  @for $i from 0 through 48 {
+    &.gap-#{$i} {
+      row-gap: #{$i}px;
+
+      [class^="col-"],
+      [class*="col-"] {
+        padding: 0 #{$i/2}px;
+      }
+
+      margin-left: -#{$i/2}px;
+      margin-right: -#{$i/2}px;
+    }
+  }
+
+  // Generate margin classes for values 1 to 10
+  @for $i from 1 through 24 {
+    .col-#{$i} {
+      width: #{100% * $i/24};
+    }
+
+    .col-md-#{$i} {
+      @media only screen and (max-width: 991px) {
+        width: #{100% * $i/24} !important;
+      }
+    }
+  }
+}

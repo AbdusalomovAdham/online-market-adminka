@@ -1,0 +1,39 @@
+.tg-app {
+  .wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    height: 100vh;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    position: relative;
+  }
+
+  &-footer {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    background-color: #f5f5f5;
+
+    .menu {
+      padding: 16px;
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+
+        li {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          span {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

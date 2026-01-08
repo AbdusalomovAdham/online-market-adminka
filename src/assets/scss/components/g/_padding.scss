@@ -1,0 +1,43 @@
+@for $i from 0 through 48 {
+  .pb-#{$i} {
+    padding-bottom: #{$i}px;
+  }
+}
+
+@for $i from 0 through 48 {
+  .pt-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+}
+
+@for $i from 0 through 48 {
+  .pl-#{$i} {
+    padding-left: #{$i}px;
+  }
+}
+
+@for $i from 0 through 48 {
+  .pr-#{$i} {
+    padding-right: #{$i}px;
+  }
+}
+
+@for $i from 0 through 48 {
+  .pa-#{$i} {
+    padding: #{$i}px;
+  }
+}
+
+@for $i from 0 through 48 {
+  .px-#{$i} {
+    padding-left: #{$i}px;
+    padding-right: #{$i}px;
+  }
+}
+
+@for $i from 0 through 48 {
+  .py-#{$i} {
+    padding-top: #{$i}px;
+    padding-bottom: #{$i}px;
+  }
+}

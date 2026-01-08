@@ -1,0 +1,135 @@
+.header {
+  padding: 20px 0;
+  width: 100%;
+  height: 84px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  &-wrapper {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      .input {
+        width: 470px;
+      }
+
+      .clock {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        .time {
+          font-size: 32px;
+          font-weight: 300;
+          line-height: 38.4px;
+          text-align: left;
+          color: #fff;
+        }
+
+        .date {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          span {
+            white-space: nowrap;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16.03px;
+            text-align: left;
+
+            &:last-child {
+              font-weight: 400;
+              opacity: 0.8;
+            }
+
+          }
+        }
+      }
+    }
+
+    .right {
+      .profile {
+        padding: 6px 16px 6px 6px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 24px;
+        gap: 8px;
+        cursor: pointer;
+        position: relative;
+        
+        .data {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #F3BA4B 0%, #F39C4B 100%);
+
+            span {
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 20.24px;
+              text-align: left;
+              color: #fff;
+            }
+          }
+        }
+
+        .dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          padding: 0 8px;
+          border-radius: 24px;
+          background: #fff;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          height: 0;
+          transition: all 0.3s ease-in-out;
+          overflow: hidden;
+          min-width: 200px;
+
+          .icon {
+            width: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 28px;
+            padding: 2px;
+            border: 1px solid #ffa2a2;
+            border-radius: 50%;
+          }
+
+          span {
+            color: rgb(49, 49, 49);
+          }
+        }
+
+        &:hover {
+          .dropdown {
+            height: 48px;
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
+}

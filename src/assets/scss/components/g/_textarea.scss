@@ -1,0 +1,71 @@
+.textarea {
+
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.9px;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  &-wrapper {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(180, 187, 200, 1);
+    display: flex;
+    height: 174px;
+    align-items: center;
+    position: relative;
+
+    .top {
+      position: absolute;
+      top: -6px;
+      background: #fff;
+      left: 12px;
+      font-size: 12px;
+      color: rgba(104, 104, 104, 1);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    textarea {
+      width: 100%;
+      background: transparent;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.1px;
+      text-align: left;
+      border: none;
+      height: 150px;
+
+      &::placeholder {
+        color: rgba(104, 104, 104, 1);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        text-align: left;
+      }
+    }
+
+    .before-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .after-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+}
+

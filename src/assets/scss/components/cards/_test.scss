@@ -1,0 +1,54 @@
+.test-card {
+    padding: 24px;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+
+    &.verified {
+        background-color: #dce9dc;
+    }
+
+    &.lock {
+        background-color: rgb(255 224 224);
+    }
+
+    h3 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .random-count {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+    }
+    
+    .description {
+        padding-top: 8px;
+        border-top: 1px solid #d3d3d3;
+    }
+
+    .access {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 18px;
+    }
+}

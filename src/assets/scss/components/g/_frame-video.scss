@@ -1,0 +1,148 @@
+.frame-video {
+  .player {
+    .screen {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 8px;
+      height: 485px;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    .progress-bar {
+      overflow-x: auto;
+      width: 100%;
+
+      .minutes {
+        display: flex;
+        min-width: 100%;
+
+        .minute {
+          min-width: 3px;
+          cursor: pointer;
+          border-top: 4px solid #c2c2c2;
+        }
+      }
+
+      .frames {
+        width: 4320px;
+        height: 64px;
+        /* background-color: #ccc; */
+        background-image: radial-gradient(#eee 1px, transparent 1px);
+        background-size: 4px 4px; /* distance between dots */
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding: 6px;
+        position: relative;
+
+        .frame {
+          background-color: #fff;
+          border-radius: 4px;
+          height: 52px;
+          width: 500px;
+          top: 6px;
+          position: absolute;
+          overflow: hidden;
+          cursor: pointer;
+
+          &.active {
+            box-shadow: 0 0 0 2px #47a94e;
+          }
+
+          .images {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+
+            .img {
+              width: 100%;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                /* object-position: center; */
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .controls {
+      .buttons {
+        .play {
+          background-color: #4caf50;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        .pause {
+          background-color: #f44336;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .programs {
+    padding: 12px 0;
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px;
+      gap: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+
+      span {
+        &:first-child {
+          font-size: 18px;
+          font-weight: 500;
+          white-space: nowrap; /* prevents line breaks */
+          display: inline-block; /* optional, makes it respect width */
+          text-overflow: ellipsis;
+        }
+        &:last-child {
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        &.line {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-top: 2px dashed #ccc;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}

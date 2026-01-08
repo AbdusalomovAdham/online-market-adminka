@@ -1,0 +1,64 @@
+.default {
+  background-image: url("@/assets/images/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &-wrapper {
+    display: flex;
+    height: 100vh;
+    justify-content: space-between;
+  }
+
+  &-main {
+    width: calc(100vw - 312px - 80px);
+  }
+
+  &-pages {
+    height: calc(100vh - 84px);
+    padding: 16px 0 20px;
+    overflow-y: auto;
+
+    @media (max-width: 1440px) {
+      width: 1024px;
+    }
+
+    .page {
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 12px;
+
+          h1 {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 27.48px;
+            text-align: left;
+            color: #fff;
+          }
+        }
+      }
+
+      &-filter {
+        height: 0;
+        border-radius: 8px;
+        background: #fff;
+        padding: 0 24px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+          height: unset;
+          padding: 24px;
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

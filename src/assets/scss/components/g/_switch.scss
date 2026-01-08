@@ -1,0 +1,40 @@
+.g-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .switch {
+        input {
+            display: none;
+        }
+
+        .slider {
+            display: flex;
+            height: 22px;
+            border-radius: 12px;
+            width: 38px;
+            background-color: #eee;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+
+            .circle {
+                position: absolute;
+                border-radius: 10px;
+                width: 20px;
+                height: 20px;
+                background-color: #fff;
+                transition: all 0.3s ease-in-out;
+                left: 1px;
+                top: 1px;
+            }
+
+            &.active {
+                background-color: rgb(72 198 72);
+                .circle {
+                    left: 17px;
+                }
+            }
+        }
+    }
+}
