@@ -15,6 +15,9 @@
         class="radius-4"
         :type="showPassword ? 'text' : $props.type"
         :placeholder="$props.placeholder"
+        :min="$props.min"
+        :step="$props.step"
+        :max="$props.max"
       />
       <span
         v-if="!$props.label || ($props.type === 'date' && !$props.label)"
@@ -71,6 +74,18 @@ const $props = defineProps({
   required: {
     type: Boolean,
     default: false,
+  },
+  min: {
+    type: [String, Number],
+    default: null,
+  },
+  max: {
+    type: [String, Number],
+    default: null,
+  },
+  step: {
+    type: [String, Number],
+    default: null,
   },
 });
 

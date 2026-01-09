@@ -143,7 +143,9 @@ import IconTrash from "@/components/icon/Trash.vue";
 import IconPencil from "@/components/icon/Pencil.vue";
 import Vue3Datatable from "@bhplugin/vue3-datatable";
 import "@bhplugin/vue3-datatable/dist/style.css";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 // props
 const props = defineProps({
   products: {
@@ -265,6 +267,11 @@ const toggleStatus = (id, val) => {
 // Delete product
 const onDelete = (id) => {
   emit("delete-product", id);
+};
+
+// Update product
+const onEdit = (id) => {
+  router.push(`/cabinet/admin/products/update/${id}`);
 };
 
 // Watch product list

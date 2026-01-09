@@ -23,6 +23,19 @@
     margin-bottom: 16px;
     font-size: 18px;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #ddd;
+    }
   }
 }
 
@@ -219,20 +232,12 @@
   gap: 12px;
   margin-top: 24px;
 
-  button {
-    padding: 12px 24px;
-    border-radius: 10px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-  }
-
   .btn-cancel {
     background: #e5e7eb;
   }
 
   .btn-save {
-    background: #007bff;
+    background: linear-gradient(180deg, #4ba0f3 0%, #197cdc 100%);
     color: #fff;
   }
 }

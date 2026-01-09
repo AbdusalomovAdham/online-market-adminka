@@ -21,15 +21,17 @@
         @refetch="refetch"
         @delete-product="deleteProduct"
         @change-server="changeServer"
+        @update="update"
       />
     </div>
   </div>
-  <!-- <div class="page-footer"></div> -->
+
   <CreateModal
     v-if="createModal"
     @cancel="createModal = false"
     @created="refetch"
   ></CreateModal>
+
   <UpdateModal
     v-if="updateModal"
     :id="selectedId"
@@ -40,26 +42,17 @@
 
 <script setup>
 import Button from "@/components/g/Button";
-import IconPencil from "@/components/icon/Pencil";
-import IconTrash from "@/components/icon/Trash";
 import IconPlus from "@/components/icon/Plus";
-import GPagination from "@/components/g/Pagination";
 import CreateModal from "@/components/modal/admin/program-category/Create.vue";
 import UpdateModal from "@/components/modal/admin/program-category/Update.vue";
 import Search from "@/components/g/Search";
 import ProductTable from "@/components/g/ProductTable.vue";
-import Switch from "@/components/g/Switch.vue";
 import { useRouter } from "vue-router";
 import { computed, onMounted, ref, watch } from "vue";
 import api from "@/plugins/axios";
 
+// states
 const router = useRouter();
-const filter = ref({
-  limit: 15,
-  page: 1,
-  order: "id+desc",
-  search: null,
-});
 const count = ref(0);
 const loading = ref(true);
 const results = ref([]);
@@ -67,12 +60,14 @@ const showFilter = ref(false);
 const createModal = ref(false);
 const updateModal = ref(false);
 const selectedId = ref(null);
+const filter = ref({
+  limit: 15,
+  page: 1,
+  order: "id+desc",
+  search: null,
+});
 
-const selectProduct = (id) => {
-  selectedId.value = id;
-  updateModal.value = true;
-};
-
+// udpate status
 const toggleStatus = async (data) => {
   const fd = new FormData();
   fd.append("status", data.status);
@@ -84,19 +79,13 @@ const toggleStatus = async (data) => {
   }
 };
 
-onMounted(async () => {
-  try {
-    await fetchList({ params: { ...params.value } });
-  } catch (e) {
-    console.error(e);
-  }
-});
-
+// search
 const onSearch = async () => {
   filter.value.page = 1;
   await refetch();
 };
 
+// params
 const params = computed(() => {
   let param = {};
 
@@ -109,6 +98,7 @@ const params = computed(() => {
   return param;
 });
 
+// change server
 const changeServer = async (data) => {
   if (data.page) filter.value.page = data.page;
   if (data.limit) filter.value.limit = data.limit;
@@ -116,6 +106,7 @@ const changeServer = async (data) => {
   await refetch();
 };
 
+// fetch product list
 const fetchList = async ({ params } = {}) => {
   loading.value = true;
   try {
@@ -131,7 +122,9 @@ const fetchList = async ({ params } = {}) => {
   loading.value = false;
 };
 
+// delete product
 const deleteProduct = async (id) => {
+  if (!confirm("Rostan ham o'chirmoqchimisiz?")) return;
   try {
     await api.delete(`/admin/product/delete/${id}`);
     await refetch();
@@ -140,6 +133,11 @@ const deleteProduct = async (id) => {
   }
 };
 
+const update = async (productId) => {
+  router.push("/cabinet/admin/products/update");
+};
+
+// refetch
 const refetch = async () => {
   await fetchList({ params: { ...params.value } });
   createModal.value = false;
@@ -147,6 +145,7 @@ const refetch = async () => {
   selectedId.value = null;
 };
 
+// watch
 watch(
   () => params.value,
   async () => {
@@ -154,13 +153,14 @@ watch(
   }
 );
 
-const nextPage = async () => {
-  filter.value.page++;
-};
-
-const prevPage = async () => {
-  filter.value.page--;
-};
+// onMounted
+onMounted(async () => {
+  try {
+    await fetchList({ params: { ...params.value } });
+  } catch (e) {
+    console.error(e);
+  }
+});
 </script>
 
 <style scoped>

@@ -11,6 +11,7 @@
       :optionLabel="optionLabel"
       :optionValue="optionValue"
       :placeholder="placeholder"
+      :disabled="props.disabled"
       filter
       filterPlaceholder="Qidirish..."
       display="chip"
@@ -48,6 +49,10 @@ const props = defineProps({
   label: {
     type: String,
     default: null,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
   },
 });
 
@@ -104,6 +109,7 @@ input:focus {
   border-radius: 6px;
   font-size: 13px;
   padding: 4px 8px;
+  gap: 6px;
 }
 
 /* =========================

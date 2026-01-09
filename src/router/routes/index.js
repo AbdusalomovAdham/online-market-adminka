@@ -72,8 +72,13 @@ const routes = [
           },
           {
             path: "products/create",
-            component: () => import("@/pages/cabinet/admin/products/Create"),
+            component: () => import("@/pages/cabinet/admin/products/create"),
             name: "cabinet-admin-products-create",
+          },
+          {
+            path: "products/update/:id",
+            component: () => import("@/pages/cabinet/admin/products/update"),
+            name: "cabinet-admin-products-update",
           },
           {
             path: "wishlists",
